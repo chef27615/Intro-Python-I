@@ -37,9 +37,9 @@ try:
     month = int(sys.argv[2])
     year = int(sys.argv[1])
     print(calendar.month(year, month))
-except IndexError:
+  else:
+    print('format yyyy mm')
+except:
   print('please put in the right format yyyy mm')  
-else:
-  print('please put in the right format yyyy mm')
   
 
