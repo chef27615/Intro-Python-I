@@ -22,3 +22,24 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+current_month = datetime.now().month
+current_year = datetime.now().year
+
+l = len(sys.argv)
+try:
+  if l == 1:
+    print(calendar.month(current_year, current_month))
+  elif l == 2:
+    month = int(sys.argv[1])
+    print(calendar.month(current_year, month))
+  elif l == 3:
+    month = int(sys.argv[2])
+    year = int(sys.argv[1])
+    print(calendar.month(year, month))
+except IndexError:
+  print('please put in the right format yyyy mm')  
+else:
+  print('please put in the right format yyyy mm')
+  
+
