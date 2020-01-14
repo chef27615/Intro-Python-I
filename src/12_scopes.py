@@ -5,6 +5,7 @@
 x = 12
 
 def changeX():
+    global x
     x = 99
 
 changeX()
@@ -20,6 +21,7 @@ def outer():
 
     def inner():
         y = 999
+        print(y)
 
     inner()
 
