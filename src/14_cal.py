@@ -22,3 +22,37 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+# from datetime import date
+
+arg = sys.argv
+
+cur_y = datetime.now().year
+cur_m = datetime.now().month
+cal = calendar.TextCalendar()
+# print(cur_m, cur_y)
+
+if len(arg)==1:
+  dis_cal = cal.formatmonth(cur_y, cur_m)
+  print(dis_cal)
+elif len(arg)==2:
+  new_month = int(sys.argv[1])
+  if 1<new_month < 12:
+    dis_cal = cal.formatmonth(cur_y, new_month)
+    print(dis_cal)
+  else:
+    print('please enter number between 1 and 12')
+elif len(arg)==3:
+  new_month = int(sys.argv[2])
+  new_year = sys.argv[1]
+  if len(new_year) ==4:
+    n_y = int(new_year)
+    dis_cal = cal.formatmonth(n_y, new_month)
+    print(dis_cal)
+  else:
+    print('please enter value in yyyy mm format')
+else:
+  print('please use format yyyy mm for calendar')
+
+
+  
+
